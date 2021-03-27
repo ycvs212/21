@@ -1,7 +1,5 @@
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    for (let value of tiles.getTilesByType(sprites.castle.tilePath5)) {
-        tiles.setTileAt(value, assets.tile`transparency16`)
-    }
+info.onCountdownEnd(function () {
+	
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     info.changeScoreBy(1)
@@ -58,6 +56,7 @@ controller.moveSprite(小明)
     . . . c c c c c e e e e e . . . 
     `, SpriteKind.Food)
 食物.setPosition(10, 100)
+info.startCountdown(10)
 game.onUpdate(function () {
     if (Math.percentChance(25)) {
         雪花 = sprites.createProjectileFromSide(img`
